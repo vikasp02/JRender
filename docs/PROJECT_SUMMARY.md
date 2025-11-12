@@ -92,10 +92,10 @@ A fully native Java 3D graphics engine built from scratch without any external d
     - Integration examples (Swing and JavaFX)
     - Troubleshooting tips
 
-13. **build.ps1**
-    - PowerShell build script
-    - Compiles all source files
-    - Lists available programs
+13. **pom.xml**
+    - Maven parent project
+    - Builds `jrender-core` and `jrender-examples`
+    - Provides a shared version and Java 8 configuration
 
 ## Features Implemented
 
@@ -163,24 +163,24 @@ A fully native Java 3D graphics engine built from scratch without any external d
 
 ## Getting Started
 
-### 1. Compile Everything
+### 1. Build All Modules
 ```bash
-javac *.java
+mvn clean install
 ```
 
 ### 2. Run the Full Demo
 ```bash
-java Demo3D
+mvn -pl examples exec:java -Dexec.mainClass=com.github.jordyh297.jrender.examples.Demo3D
 ```
 
 ### 3. Run Simple Example
 ```bash
-java SimpleExample
+mvn -pl examples exec:java -Dexec.mainClass=com.github.jordyh297.jrender.examples.SimpleExample
 ```
 
-### 4. Use PowerShell Build Script
-```powershell
-.\build.ps1
+### 4. Run Advanced Example
+```bash
+mvn -pl examples exec:java -Dexec.mainClass=com.github.jordyh297.jrender.examples.AdvancedExample
 ```
 
 ## Key Design Decisions

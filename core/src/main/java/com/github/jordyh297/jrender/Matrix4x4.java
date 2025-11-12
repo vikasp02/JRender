@@ -1,3 +1,5 @@
+package com.github.jordyh297.jrender;
+
 /**
  * Represents a 4x4 matrix for 3D transformations.
  * Used for translation, rotation, scaling, and projection.

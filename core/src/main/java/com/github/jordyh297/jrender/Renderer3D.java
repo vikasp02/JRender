@@ -1,3 +1,5 @@
+package com.github.jordyh297.jrender;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;

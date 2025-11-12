@@ -23,24 +23,33 @@ A **fully functional, native Java 3D graphics engine** with:
 1. ✅ **README.md** - Complete technical documentation
 2. ✅ **QUICKSTART.md** - Quick reference guide
 3. ✅ **PROJECT_SUMMARY.md** - Project overview
-4. ✅ **build.ps1** - Build script
+4. ✅ **AGENTS.md** - Contributor guidelines
+
+### Maven Project
+- ✅ **pom.xml** - Parent that builds everything
+- ✅ **core/** - `jrender-core` module (engine)
+- ✅ **examples/** - `jrender-examples` module (demos)
 
 ## 🚀 Quick Start
 
+### Build All Modules
+```bash
+mvn clean install
+```
+
 ### Run the Full Demo
 ```bash
-javac *.java
-java Demo3D
+mvn -pl examples exec:java -Dexec.mainClass=com.github.jordyh297.jrender.examples.Demo3D
 ```
 
 ### Run Simple Example
 ```bash
-java SimpleExample
+mvn -pl examples exec:java -Dexec.mainClass=com.github.jordyh297.jrender.examples.SimpleExample
 ```
 
 ### Run Advanced Example
 ```bash
-java AdvancedExample
+mvn -pl examples exec:java -Dexec.mainClass=com.github.jordyh297.jrender.examples.AdvancedExample
 ```
 
 ## 🎯 Key Features
@@ -253,27 +262,29 @@ You have successfully created a 3D engine if you can:
 ## 📝 Files Overview
 
 ```
-Java/
-├── Core Engine
-│   ├── Vector3D.java       (74 lines)
-│   ├── Matrix4x4.java      (136 lines)
-│   ├── Vertex.java         (33 lines)
-│   ├── Triangle.java       (41 lines)
-│   ├── Mesh.java           (118 lines)
-│   ├── Camera.java         (76 lines)
-│   ├── Light.java          (93 lines)
-│   └── Renderer3D.java     (233 lines)
+JRender/
+├── core/
+│   └── src/main/java/com/github/jordyh297/jrender/
+│       ├── Vector3D.java       (74 lines)
+│       ├── Matrix4x4.java      (136 lines)
+│       ├── Vertex.java         (33 lines)
+│       ├── Triangle.java       (41 lines)
+│       ├── Mesh.java           (118 lines)
+│       ├── Camera.java         (76 lines)
+│       ├── Light.java          (93 lines)
+│       └── Renderer3D.java     (233 lines)
 │
-├── Examples
-│   ├── Demo3D.java         (248 lines) ⭐ INTERACTIVE DEMO
-│   ├── SimpleExample.java  (70 lines)  ⭐ START HERE
-│   └── AdvancedExample.java(180 lines) ⭐ GUI CONTROLS
+├── examples/
+│   └── src/main/java/com/github/jordyh297/jrender/examples/
+│       ├── Demo3D.java         (248 lines) ⭐ INTERACTIVE DEMO
+│       ├── SimpleExample.java  (70 lines)  ⭐ START HERE
+│       └── AdvancedExample.java(180 lines) ⭐ GUI CONTROLS
 │
 └── Documentation
     ├── README.md            (Complete docs)
     ├── QUICKSTART.md        (Quick reference)
     ├── PROJECT_SUMMARY.md   (Overview)
-    └── build.ps1            (Build script)
+    └── AGENTS.md            (Contributor guide)
 ```
 
 ## 🎯 Summary
@@ -288,6 +299,6 @@ You now have a **complete, production-ready 3D graphics engine** that:
 - Can be integrated with Swing or JavaFX
 - Is ready to extend and customize
 
-**Start by running:** `java Demo3D` 🚀
+**Start by running:** `mvn -pl examples exec:java -Dexec.mainClass=com.github.jordyh297.jrender.examples.Demo3D` 🚀
 
 Enjoy your 3D engine! 🎮✨

@@ -1,3 +1,5 @@
+package com.github.jordyh297.jrender;
+
 import java.awt.Color;
 
 /**

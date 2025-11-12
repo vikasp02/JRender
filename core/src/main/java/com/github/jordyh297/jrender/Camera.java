@@ -1,3 +1,5 @@
+package com.github.jordyh297.jrender;
+
 /**
  * Camera for 3D rendering with position, rotation, and projection settings.
  */

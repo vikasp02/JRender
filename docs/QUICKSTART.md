@@ -3,11 +3,11 @@
 ## Running the Demo
 
 ```bash
-# Compile all files
-javac *.java
+# Build all modules
+mvn clean install
 
-# Run the demo
-java Demo3D
+# Run the interactive demo
+mvn -pl examples exec:java -Dexec.mainClass=com.github.jordyh297.jrender.examples.Demo3D
 ```
 
 ## Keyboard Controls
