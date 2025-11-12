@@ -1,3 +1,6 @@
+package com.github.jordyh297.jrender.examples;
+
+import com.github.jordyh297.jrender.*;
 import javax.swing.*;
 import java.awt.*;
 

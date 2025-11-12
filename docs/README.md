@@ -60,16 +60,22 @@ Demo3D.java            - Interactive Swing-based demo application
 8. **Depth Sorting**: Sort triangles by depth (painter's algorithm)
 9. **Rasterization**: Draw triangles to screen
 
-## Compilation and Running
+## Build and Run (Maven)
 
-### Compile All Files
+### Compile All Modules
 ```bash
-javac *.java
+mvn clean install
 ```
 
-### Run the Demo
+### Run the Interactive Demo
 ```bash
-java Demo3D
+mvn -pl examples exec:java -Dexec.mainClass=com.github.jordyh297.jrender.examples.Demo3D
+```
+
+### Run Other Examples
+```bash
+mvn -pl examples exec:java -Dexec.mainClass=com.github.jordyh297.jrender.examples.SimpleExample
+mvn -pl examples exec:java -Dexec.mainClass=com.github.jordyh297.jrender.examples.AdvancedExample
 ```
 
 ## Usage Examples

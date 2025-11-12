@@ -5,59 +5,46 @@ A fully native Java 3D graphics engine built from scratch without external depen
 ## Directory Structure
 
 ```
-Java/
-├── src/              # Core engine source files
-│   ├── Vector3D.java
-│   ├── Matrix4x4.java
-│   ├── Vertex.java
-│   ├── Triangle.java
-│   ├── Mesh.java
-│   ├── Camera.java
-│   ├── Light.java
-│   └── Renderer3D.java
-├── examples/         # Example applications
-│   ├── Demo3D.java           # Full interactive demo
-│   ├── SimpleExample.java    # Minimal example
-│   └── AdvancedExample.java  # Advanced multi-object scene
-├── docs/             # Documentation
+JRender/
+├── core/                 # jrender-core module (engine source)
+│   └── src/main/java/com/github/jordyh297/jrender/
+├── examples/             # jrender-examples module (demo apps)
+│   └── src/main/java/com/github/jordyh297/jrender/examples/
+├── docs/                 # Documentation set
 │   ├── README.md
 │   ├── QUICKSTART.md
 │   └── PROJECT_SUMMARY.md
-├── bin/              # Compiled class files (auto-generated)
-├── compile.ps1       # Build script
-└── run.ps1           # Run script
+├── AGENTS.md             # Contributor guidelines
+├── QUICKREF.md           # Quick reference guide
+└── pom.xml               # Maven parent (aggregates modules)
 ```
 
 ## Quick Start
 
-### 1. Compile Everything
-```powershell
-.\compile.ps1
+### 1. Build Everything
+```bash
+mvn clean install
 ```
 
 ### 2. Run Examples
-```powershell
+```bash
 # Full interactive demo (recommended)
-.\run.ps1 Demo3D
+mvn -pl examples exec:java -Dexec.mainClass=com.github.jordyh297.jrender.examples.Demo3D
 
-# Simple rotating cube
-.\run.ps1 SimpleExample
+# Minimal rotating cube
+mvn -pl examples exec:java -Dexec.mainClass=com.github.jordyh297.jrender.examples.SimpleExample
 
-# Advanced scene with GUI controls
-.\run.ps1 AdvancedExample
+# Advanced multi-object scene
+mvn -pl examples exec:java -Dexec.mainClass=com.github.jordyh297.jrender.examples.AdvancedExample
 ```
 
-### Alternative: Manual Compilation
-```powershell
-# Compile core engine
-javac -d bin src\*.java
-
-# Compile examples
-javac -cp bin -d bin examples\*.java
-
-# Run an example
-java -cp bin Demo3D
+### Alternative: Manual Execution
+```bash
+mvn -pl examples package
+java -cp \"core/target/jrender-core-1.0.0-SNAPSHOT.jar:examples/target/jrender-examples-1.0.0-SNAPSHOT.jar\" \\
+     com.github.jordyh297.jrender.examples.Demo3D
 ```
+> On Windows, replace the colon in the classpath with a semicolon.
 
 ## Features
 
@@ -155,17 +142,16 @@ Educational/demonstration project. Free to use and modify.
 
 ## Troubleshooting
 
-### Compilation Issues
-```powershell
-# Clean and rebuild
-Remove-Item -Path bin\* -Force
-.\compile.ps1
+### Build Issues
+```bash
+mvn clean
+mvn -U install
 ```
 
 ### Runtime Issues
-- Ensure you're in the Java directory when running
-- Check that bin directory contains .class files
-- Verify Java version: `java -version`
+- Ensure modules were built (`core/target` and `examples/target` exist)
+- Run demos through Maven to pick up dependencies automatically
+- Verify Java version: `java -version` (JDK 8+)
 
 ## Future Enhancements
 

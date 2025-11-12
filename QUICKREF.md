@@ -3,30 +3,28 @@
 ## Project Structure
 
 ```
-Java/
-├── src/                    → Core engine (8 files)
-├── examples/               → Demo apps (3 files)
-├── docs/                   → Documentation (4 files)
-├── bin/                    → Compiled classes (auto-generated)
-├── compile.ps1             → Build everything
-├── run.ps1                 → Run examples
-└── README.md               → Main documentation
+JRender/
+├── core/                    → Engine module (src/main/java/com/github/jordyh297/jrender)
+├── examples/                → Demo module (src/main/java/com/github/jordyh297/jrender/examples)
+├── docs/                    → Documentation bundle
+├── AGENTS.md                → Contributor guide
+├── QUICKREF.md              → This file
+└── pom.xml                  → Maven parent (runs all modules)
 ```
 
 ## Quick Commands
 
-```powershell
+```bash
 # Build everything
-.\compile.ps1
+mvn clean install
 
-# Run demos
-.\run.ps1 Demo3D           # Full interactive demo ⭐
-.\run.ps1 SimpleExample    # Minimal example
-.\run.ps1 AdvancedExample  # GUI controls
+# Run demos (pick one)
+mvn -pl examples exec:java -Dexec.mainClass=com.github.jordyh297.jrender.examples.Demo3D      # ⭐ Full demo
+mvn -pl examples exec:java -Dexec.mainClass=com.github.jordyh297.jrender.examples.SimpleExample
+mvn -pl examples exec:java -Dexec.mainClass=com.github.jordyh297.jrender.examples.AdvancedExample
 
-# Clean build
-Remove-Item bin\* -Force
-.\compile.ps1
+# Clean build outputs
+mvn clean
 ```
 
 ## Demo3D Controls
@@ -104,17 +102,14 @@ g.drawImage(renderer.getBuffer(), 0, 0, null);
 ## 🔧 Troubleshooting
 
 **Compilation fails?**
-```powershell
-# Clean and rebuild
-Remove-Item bin\* -Force
-.\compile.ps1
+```bash
+mvn clean
+mvn install
 ```
 
 **Can't run example?**
-```powershell
-# Make sure you compiled first
-.\compile.ps1
-.\run.ps1 Demo3D
+```bash
+mvn -pl examples exec:java -Dexec.mainClass=com.github.jordyh297.jrender.examples.Demo3D
 ```
 
 **Objects not visible?**
@@ -132,8 +127,8 @@ Reduce number of lights
 
 ## Next Steps
 
-1. Run `.\compile.ps1`
-2. Run `.\run.ps1 Demo3D`
+1. Run `mvn clean install`
+2. Run `mvn -pl examples exec:java -Dexec.mainClass=com.github.jordyh297.jrender.examples.Demo3D`
 3. Read `docs/QUICKSTART.md` for examples
 4. Modify `examples/SimpleExample.java`
 5. Create your own 3D scenes!

@@ -1,3 +1,5 @@
+package com.github.jordyh297.jrender;
+
 /**
  * Represents a 3D vector with x, y, z components.
  * Provides operations for vector mathematics.
